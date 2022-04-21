@@ -50,19 +50,29 @@ stats"></a></div></noscript>
 
 <!-- JavaScript for the test itself -->
 <script>
-    var max_econ, max_dipl, max_govt, max_scty; // Max possible scores
-    max_econ = max_dipl = max_govt = max_scty = 0;
-    let econ_array = new Array(questions.length);
-    let dipl_array = new Array(questions.length);
-    let govt_array = new Array(questions.length);
-    let scty_array = new Array(questions.length);
+    var max_a, max_b, max_c, max_d, max_e, max_f, max_g, max_h, max_i; // Max possible scores
+    max_a = max_b = max_c = max_d = max_e = max_f = max_g = max_h = max_i = 0;
+    let a_array = new Array(questions.length);
+    let b_array = new Array(questions.length);
+    let c_array = new Array(questions.length);
+    let d_array = new Array(questions.length);
+    let e_array = new Array(questions.length);
+    let f_array = new Array(questions.length);
+    let g_array = new Array(questions.length);
+    let h_array = new Array(questions.length);
+    let i_array = new Array(questions.length);
     var qn = 0; // Question number
     init_question();
     for (var i = 0; i < questions.length; i++) {
-        max_econ += Math.abs(questions[i].effect.econ)
-        max_dipl += Math.abs(questions[i].effect.dipl)
-        max_govt += Math.abs(questions[i].effect.govt)
-        max_scty += Math.abs(questions[i].effect.scty)
+        max_a += Math.abs(questions[i].effect.a)
+        max_b += Math.abs(questions[i].effect.b)
+        max_c += Math.abs(questions[i].effect.c)
+        max_d += Math.abs(questions[i].effect.d)
+        max_e += Math.abs(questions[i].effect.e)
+        max_f += Math.abs(questions[i].effect.f)
+        max_g += Math.abs(questions[i].effect.g)
+        max_h += Math.abs(questions[i].effect.h)
+        max_i += Math.abs(questions[i].effect.i)
     }
     function init_question() {
         document.getElementById("question-text").innerHTML = questions[qn].question;
@@ -78,10 +88,15 @@ stats"></a></div></noscript>
     }
 
     function next_question(mult) {
-        econ_array[qn] = mult*questions[qn].effect.econ
-        dipl_array[qn] = mult*questions[qn].effect.dipl
-        govt_array[qn] = mult*questions[qn].effect.govt
-        scty_array[qn] = mult*questions[qn].effect.scty
+        a_array[qn] = mult*questions[qn].effect.a
+        b_array[qn] = mult*questions[qn].effect.b
+        c_array[qn] = mult*questions[qn].effect.c
+        d_array[qn] = mult*questions[qn].effect.d
+      e_array[qn] = mult*questions[qn].effect.e
+      f_array[qn] = mult*questions[qn].effect.f
+      g_array[qn] = mult*questions[qn].effect.g
+      h_array[qn] = mult*questions[qn].effect.h
+      i_array[qn] = mult*questions[qn].effect.i
         qn++;
         if (qn < questions.length) {
             init_question();
@@ -103,15 +118,25 @@ stats"></a></div></noscript>
     }
 
     function results() {
-        let final_econ = econ_array.reduce((a, b) => a + b, 0)
-        let final_dipl = dipl_array.reduce((a, b) => a + b, 0)
-        let final_govt = govt_array.reduce((a, b) => a + b, 0)
-        let final_scty = scty_array.reduce((a, b) => a + b, 0)
+        let final_a = a_array.reduce((a, b) => a + b, 0)
+        let final_b = b_array.reduce((a, b) => a + b, 0)
+        let final_c = c_array.reduce((a, b) => a + b, 0)
+        let final_d = d_array.reduce((a, b) => a + b, 0)
+        let final_e = e_array.reduce((a, b) => a + b, 0)
+        let final_f = f_array.reduce((a, b) => a + b, 0)
+        let final_g = g_array.reduce((a, b) => a + b, 0)
+        let final_h = h_array.reduce((a, b) => a + b, 0)
+        let final_i = i_array.reduce((a, b) => a + b, 0)
         location.href = `results.html`
-            + `?e=${calc_score(final_econ,max_econ)}`
-            + `&d=${calc_score(final_dipl,max_dipl)}`
-            + `&g=${calc_score(final_govt,max_govt)}`
-            + `&s=${calc_score(final_scty,max_scty)}`
+            + `?a=${calc_score(final_ a,max_a)}`
+            + `&b=${calc_score(final_ b,max_b)}`
+            + `&c=${calc_score(final_ c,max_c)}`
+            + `&d=${calc_score(final_ d,max_d)}`
+            + `&e=${calc_score(final_ e,max_e)}`
+            + `&f=${calc_score(final_ f,max_f)}`
+            + `&g=${calc_score(final_ g,max_g)}`
+            + `&h=${calc_score(final_ h,max_h)}`
+            + `&i=${calc_score(final_ i,max_i)}`
     }
 </script>
 </body>

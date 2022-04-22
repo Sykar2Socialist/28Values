@@ -1,7 +1,7 @@
 <head>
 <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700|Roboto:400,700" rel="stylesheet">
 <link href='style.css' rel='stylesheet' type='text/css'>
-<title>8values Results</title>
+<title>Chinesevalues Results</title>
 <link rel="icon" type="x-icon" href="icon.png">
 <link rel="shortcut icon" type="x-icon" href="icon.png">
 <meta charset="utf-8">
@@ -143,14 +143,24 @@ stats"></a></div></noscript>
         	{return ary[8]}
     }
 
-    equality  = getQueryVariable("e")
-    peace     = getQueryVariable("d")
-    liberty   = getQueryVariable("g")
-    progress  = getQueryVariable("s")
+    equality  = getQueryVariable("a")
+    unity     = getQueryVariable("b")
+    liberty   = getQueryVariable("c")
+    progress  = getQueryVariable("d")
+    central   = getQueryVariable("e")
+    secular   = getQueryVariable("f")
+    eco       = getQueryVariable("g")
+    prim      = getQueryVariable("h")
+    red       = getQueryVariable("i")
     wealth    = (100 - equality).toFixed(1)
-    might     = (100 - peace   ).toFixed(1)
+    devide    = (100 - unity   ).toFixed(1)
     authority = (100 - liberty ).toFixed(1)
     tradition = (100 - progress).toFixed(1)
+    federal   = (100 - central).toFixed(1)
+    theocrat  = (100 - secular).toFixed(1)
+    indust    = (100 - eco).toFixed(1)
+    transh    = (100 - prim).toFixed(1)
+    rebel     = (100 - red).toFixed(1)
 
     setBarValue("equality", equality)
     setBarValue("wealth", wealth)

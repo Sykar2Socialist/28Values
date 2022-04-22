@@ -127,9 +127,10 @@ stats"></a></div></noscript>
     }
 
     aArray = ["人民公社(Communalist)","紅星(Communist)","社會主義(Socialist)","偏民生(Social)","中心(Centrist)","自由主義(Liberal)","資本主義(Capitalist)","放任(Laissez-Faire)","叢林法則(Principle of Jungle)"]
-    bArray = ["支黑(Sinophobes)","反中(Anti-China)","諸夏(Multi-Hans)","獨立(Indepedence)","無意見(Balanced)","愛國(Patriotic)","漢民族主義(Nationalist)","收復(Irredentist)","皇漢(Chauvinist)"]
+    bArray = ["春秋戰國(East-Zhou Dynasty)","諸夏(Multi-Hans)","獨立(Indepedence)","半獨立(Semi-Indepedence)","無意見(Balanced)","愛國(Patriotic)","漢民族主義(Nationalist)","收復(Irredentist)","皇漢(Chauvinist)"]
     cArray = ["自我(Ego)","安那其(Anarchist)","Libertarian","反獨裁(Anti-Authority)","靜默(Moderate)","國家(Statist)","獨裁(Authoritarian)","踐踏(Totalitarian)","東亞國(Eastaisa,1984)"]
-    dArray = ["超文革(Hyper-Cultural Revolution)","文革(Cultral Revolution)","白左(Baizuo)","新文化(1919)","中立(Neutral)","復古(Retro)","傳統(Traditional)","周公制理(Reactionary)","上古(Pre-Xia Dynasty)]
+    dArray = ["超文革(Hyper-Cultural Revolution)","文革(Cultral Revolution)","白左(Baizuo)","新文化(1919)","中立(Neutral)","復古(Retro)","傳統(Traditional)","周公制理(Reactionary)","上古(Pre-Xia Dynasty)"]
+    eArray = ["世界政府(Cosmopolitician)","單一(Unitary)","中央(Central)","集中(Centralize)","中立(Neutral)","自治(Automony)","聯邦(Federal)","地方(District)","城邦(Urban)"]
 
     function setLabel(val,ary) {
         if (val > 100) { return ary[0] } else
@@ -182,9 +183,14 @@ stats"></a></div></noscript>
     setBarValue("rebel", rebel)
 
     document.getElementById("economic-label").innerHTML = setLabel(equality, aArray)
-    document.getElementById("diplomatic-label").innerHTML = setLabel(peace, bArray)
+    document.getElementById("diplomatic-label").innerHTML = setLabe(devide, bArray)
     document.getElementById("state-label").innerHTML = setLabel(liberty, cArray)
     document.getElementById("society-label").innerHTML = setLabel(progress, dArray)
+    document.getElementById("local-label").innerHTML = setLabel(local, earray)
+    document.getElementById("religious-label").innerHTML = setLabel(secular, fArray)
+    document.getElementById("environment-label").innerHTML = setLabel(eco, gArray)
+    document.getElementById("technological-label").innerHTML = setLabel(prim, hArray)
+    document.getElementById("state quo-label").innerHTML = setLabel(red, iArray)
 
     ideology = ""
     ideodist = Infinity
